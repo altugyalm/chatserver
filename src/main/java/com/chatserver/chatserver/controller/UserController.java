@@ -7,10 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.chatserver.chatserver.model.DTOs.LoginDTO;
 import com.chatserver.chatserver.model.User;
 import com.chatserver.chatserver.service.UserService;
+
 
 
 @RestController
@@ -29,6 +32,12 @@ public class UserController {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+
+    @GetMapping("/login")
+    public User getMethodName(@RequestParam LoginDTO loginDTO) {
+        return userService.loginUser(loginDTO);
+    }
+    
     
 
     

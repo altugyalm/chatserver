@@ -24,7 +24,8 @@ public class MessageService {
     }
 
     public Message getMessageByID(Long messageID){
-        return messageRepository.findById(messageID).orElseThrow(() -> new RuntimeException("Message Not Found!"));
+        return messageRepository.findById(messageID)
+        .orElseThrow(() -> new RuntimeException("Message Not Found!"));
     }
     
 }
