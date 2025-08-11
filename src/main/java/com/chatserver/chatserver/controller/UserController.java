@@ -14,7 +14,7 @@ import com.chatserver.chatserver.service.UserService;
 
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
